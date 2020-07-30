@@ -1,0 +1,29 @@
+
+<h2>user</h2>
+<div id="party">
+<div><b>login: </b>{{user.login}}</div>
+<div><b>firstName: </b>{{user.firstName}}</div>
+<div><b>lastName: </b>{{user.lastName}}</div>
+<div><b>email: </b>{{user.email}}</div>
+<div><b>phoneNumber: </b>{{user.phoneNumber}}</div>
+<div><b>socialNetworks: </b>{{user.socialNetworks}}</div>
+<div><b>instrument: </b>{{user.instrument}}</div>
+<div><b>address: </b>{{user.address}}</div>
+<div><b>about: </b>{{user.about}}</div>
+<div><b>inSearch: </b>{{user.inSearch}}</div>
+
+</div>
+
+
+
+{{#if adm}}
+<div>_________________</div>
+
+<div><a href="/edit/{{user._id}}">edit</a></div>
+
+<form id="delete" >
+  <input type="text" name="id" value="{{user._id}}" hidden>
+  <button type="submit">delete</button>
+</form>
+
+{{/if}}

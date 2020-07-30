@@ -1,0 +1,33 @@
+<h2>Registration</h2>
+
+<form class="form" action='/user/register' method='post'>
+<div><label class="label">first name</label><input type="text" name="firstName" required></div>
+<div><label class="label">last name</label><input type="text" name="lastName"></div>
+<div><label class="label">email</label><input type="email" name="email" required></div>
+<div><label class="label">phone number</label><input type="tel" name="phoneNumber"></div>
+<div><label class="label">social networks</label><input type="text" name="socialNetworks"></div>
+<div><label class="label">instrument</label>
+<select name="instrument">
+  {{#each instruments}}
+  <option value="{{this.name}}">{{this.name}}</option>
+  {{/each}}
+</select>
+</div>
+<div><label class="label">style</label>
+<select name="style">
+  {{#each styles}}
+  <option value="{{this.name}}">{{this.name}}</option>
+  {{/each}}
+</select>
+</div>
+<div><label class="label">address</label><input type="text" name="address" required></div>
+<div><label class="label">login</label><input type="text" name="login" required></div>
+<div><label class="label">password</label><input type="password" name="password" required></div>
+<div><label class="label">in search ?</label>
+      <input name="inSearch" type="radio" value="true"> yes 
+      <input name="inSearch" type="radio" value="false"> no 
+<div><label class="label">about</label><textarea type="text" name="about"></textarea></div>
+<input type="text" name="admin" value="false" hidden></div>
+<div><button class="button" type="submit">submit</button></div>
+</form>
+

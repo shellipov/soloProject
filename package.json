@@ -1,0 +1,38 @@
+{
+  "name": "soloproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.9.26",
+    "session-file-store": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellipov/soloProject.git"
+  },
+  "author": "shellipov@mail.ru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shellipov/soloProject/issues"
+  },
+  "homepage": "https://github.com/shellipov/soloProject#readme"
+}
