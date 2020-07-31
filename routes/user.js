@@ -88,6 +88,7 @@ router
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
+   console.log(id);
   const user = await userModel.findOne({ _id: id });
   if (user._id == res.locals.user._id) {
     const adm = true;

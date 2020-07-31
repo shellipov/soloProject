@@ -1,0 +1,10 @@
+
+{{#each users}}
+<div class="man" id="{{this._id}}">
+<div><h3><b>login:</b><a href="user/{{this._id}}">{{this.login}}</a></h3></div>
+<div><b>instrument:</b>{{#each this.instrument}} {{this}} {{/each}}</div>
+<div><b>style:</b>{{#each this.style}} {{this}} {{/each}}</div>
+<div><b>______________________________</b></div>
+</div>
+{{/each}}
+

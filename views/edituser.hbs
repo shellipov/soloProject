@@ -1,11 +1,11 @@
 <h2 class="bigtext">Edit</h2>
 
 <form class="form" action='/edit/{{user._id}}' method='post'>
-<div><label class="label">first name</label><input placeholder="{{user.firstName}}" type="text" name="firstName" required></div>
-<div><label class="label">last name</label><input placeholder="{{user.lastName}}" type="text" name="lastName"></div>
-<div><label class="label">email</label><input placeholder="{{user.email}}" type="email" name="email" required></div>
-<div><label class="label">phone number</label><input placeholder="{{user.phoneNumber}}" type="tel" name="phoneNumber"></div>
-<div><label class="label">social networks</label><input placeholder="{{user.socialNetworks}}" type="text" name="socialNetworks"></div>
+<div><label class="label">first name</label><input value="{{user.firstName}}" type="text" name="firstName" required></div>
+<div><label class="label">last name</label><input value="{{user.lastName}}" type="text" name="lastName"></div>
+<div><label class="label">email</label><input value="{{user.email}}" type="email" name="email" required></div>
+<div><label class="label">phone number</label><input value="{{user.phoneNumber}}" type="tel" name="phoneNumber"></div>
+<div><label class="label">social networks</label><input value="{{user.socialNetworks}}" type="text" name="socialNetworks"></div>
 <div><label class="label">instrument</label>
 <select name="instrument">
   <option selected>{{user.instrument}}</option>
@@ -22,9 +22,9 @@
   {{/each}}
 </select>
 </div>
-<div><label class="label">address</label><input placeholder="{{user.address}}" type="text" name="address" required></div>
-<div><label class="label">login</label><input placeholder="{{user.login}}" type="text" name="login" required></div>
-<div><label class="label">password</label><input placeholder="{{user.password}}" type="password" name="password" required></div>
+<div><label class="label">address</label><input value="{{user.address}}" type="text" name="address" required></div>
+<div><label class="label">login</label><input value="{{user.login}}" type="text" name="login" required></div>
+<div><label class="label">password</label><input type="password" name="password" required></div>
 <div><label class="label">in search ?</label>
       <input name="inSearch" type="radio" value="true"> yes 
       <input name="inSearch" type="radio" value="false"> no 
