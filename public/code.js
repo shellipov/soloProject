@@ -9,7 +9,20 @@ ymaps.ready(() => {
   });
 
   list.forEach(async (man) => {
-    const address = man.id;
+    const { id } = man;
+
+    const user = await fetch('/user/getuser', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id,
+      }),
+    });
+
+    const { address, login, instrument, style } = await user.json();
+
     const response = await fetch(`https://geocode-maps.yandex.ru/1.x/?format=json&apikey=88f3cd83-ac57-4f7b-acf9-09cef542b757&geocode=${address}`);
     const answer = await response.json();
     // eslint-disable-next-line max-len
@@ -17,8 +30,8 @@ ymaps.ready(() => {
     const coordinates = yandexCoordinates.split(' ').map((el) => el * 1).reverse();
 
     const myPlace = new ymaps.Placemark(coordinates, {
-      hintContent: 'Собственный значок метки с контентом',
-      balloonContent: 'тут живет сатана',
+      hintContent: 'look profile',
+      balloonContent: `<h6><a href="/user/${id}">${login}</a></h6> <p>${instrument}</p> <p>${style}</p> `,
       iconContent: '',
     }, {
       preset: 'islands#Icon',
