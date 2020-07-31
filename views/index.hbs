@@ -1,11 +1,41 @@
   <script src="https://api-maps.yandex.ru/2.1/?apikey=88f3cd83-ac57-4f7b-acf9-09cef542b757&lang=ru_RU" type="text/javascript"></script>
-  <script defer src="http://localhost:3000/code.js "></script>
+  {{!-- <script defer src="http://localhost:3000/code.js "></script> --}}
 <h1 class="bigtext">musicians</h1>
+
+<div class="sortwindow">
+  <div class="sortelem">
+    <h5 class="white" >sort by instrument </h5>
+<form id="instrumentsort" class="sort">
+  <select class="select" name="instrument">
+  {{#each instruments}}
+  <option value="{{this.name}}">{{this.name}}</option>
+  {{/each}}
+</select>
+<button class="littlebutton" type="submit">sort</button>
+</form>
+</div>
+
+<div class="sortelem">
+<h5 class="white" >sort by style </h5>
+<form id="stylesort" class="sort">
+  <select class="select" name="style">
+  {{#each styles}}
+  <option value="{{this.name}}">{{this.name}}</option>
+  {{/each}}
+</select>
+<button class="littlebutton" type="submit">sort</button>
+</form>
+</div>
+
+
+
+</div>
+
 <div id='main'>
 <div class="list" id="list">
 {{#each users}}
 <div class="man" id="{{this.address}}">
-<div><b>login:</b><a href="user/{{this._id}}">{{this.login}}</a></div>
+<div><h3><b>login:</b><a href="user/{{this._id}}">{{this.login}}</a></h3></div>
 <div><b>instrument:</b>{{#each this.instrument}} {{this}} {{/each}}</div>
 <div><b>style:</b>{{#each this.style}} {{this}} {{/each}}</div>
 <div><b>______________________________</b></div>
@@ -13,28 +43,10 @@
 {{/each}}
 </div>
 
-<div class="map" id="map" style="width: 1000px; height: 700px"></div>
+<div class="map" id="map" style="width: 900px; height: 700px"></div>
 </div>
 
-<h4>sort by instrument</h4>
-<form id="instrumentsort" class="sort">
-  <select name="instrument">
-  {{#each instruments}}
-  <option value="{{this.name}}">{{this.name}}</option>
-  {{/each}}
-</select>
-<button class="button" type="submit">sort</button>
-</form>
 
-<h4>sort by style</h4>
-<form id="stylesort" class="sort">
-  <select name="style">
-  {{#each styles}}
-  <option value="{{this.name}}">{{this.name}}</option>
-  {{/each}}
-</select>
-<button class="button" type="submit">sort</button>
-</form>
 
 
 

@@ -4,54 +4,6 @@ import { styleModel, instrumentModel, userModel } from '../database/database.js'
 
 const router = express.Router();
 
-router.get('/:id', async (req, res) => {
-  const { id } = req.params;
-  const user = await userModel.findOne({ _id: id });
-  const instruments = await instrumentModel.find();
-  const styles = await styleModel.find();
-  res.render('edituser', { user, instruments, styles });
-});
-
-router.post('/:id', async (req, res) => {
-  const { id } = req.params;
-  const {
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    socialNetworks,
-    instrument,
-    style,
-    address,
-    login,
-    password,
-    inSearch,
-    about,
-    admin,
-  } = req.body;
-  // const xxx = await userModel.findOne({ _id });
-  // console.log(xxx);
-  await userModel.findOneAndUpdate({ _id: id }, {
-    $set: {
-      firstName,
-      lastName,
-      email,
-      phoneNumber,
-      socialNetworks,
-      instrument,
-      style,
-      address,
-      login,
-      password: await bcrypt.hash(password, 10),
-      inSearch,
-      about,
-      admin,
-    },
-  });
-  const message = 'changed';
-  res.render('success', { message });
-});
-
 router.get('/style', async (req, res) => {
   res.render('newstyle');
 });
@@ -84,6 +36,52 @@ router.post('/instrument', async (req, res) => {
     const error = `${name} already exist`;
     res.render('error', { error });
   }
+});
+
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  const user = await userModel.findOne({ _id: id });
+  const instruments = await instrumentModel.find();
+  const styles = await styleModel.find();
+  res.render('edituser', { user, instruments, styles });
+});
+
+router.post('/:id', async (req, res) => {
+  const { id } = req.params;
+  const {
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    socialNetworks,
+    instrument,
+    style,
+    address,
+    login,
+    password,
+    inSearch,
+    about,
+    admin,
+  } = req.body;
+  await userModel.findOneAndUpdate({ _id: id }, {
+    $set: {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      socialNetworks,
+      instrument,
+      style,
+      address,
+      login,
+      password: await bcrypt.hash(password, 10),
+      inSearch,
+      about,
+      admin,
+    },
+  });
+  const message = 'changed';
+  res.render('success', { message });
 });
 
 export default router;

@@ -1,6 +1,6 @@
 
-<h2>user</h2>
-<div id="party">
+<h2 class="bigtext">user</h2>
+<div class="form" id="party">
 <div><b>login: </b>{{user.login}}</div>
 <div><b>firstName: </b>{{user.firstName}}</div>
 <div><b>lastName: </b>{{user.lastName}}</div>
@@ -23,7 +23,7 @@
 
 <form id="delete" >
   <input type="text" name="id" value="{{user._id}}" hidden>
-  <button type="submit">delete</button>
+  <button class="redbutton" type="submit">delete profile</button>
 </form>
 
 {{/if}}

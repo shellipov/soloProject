@@ -7,7 +7,7 @@ mongoose.connect(address,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    // useFindAndModify: true,
+    useFindAndModify: true,
   });
 
 const userSchema = new mongoose.Schema({
