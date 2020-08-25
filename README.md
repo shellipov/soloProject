@@ -1,7 +1,7 @@
 # Musicians
 
 
-![screenshot](readme-assets/game0.gif)
+![screenshot](readme-assets/screen0.png)
 
 
 Сервис для поиска музыкантов по геопозиции.
@@ -18,6 +18,7 @@
 
 Запуск программы: 
 > npm i
+
 > npm start
 
 
