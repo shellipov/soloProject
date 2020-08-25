@@ -7,6 +7,7 @@
 <div><label class="label">phone number</label><input value="{{user.phoneNumber}}" type="tel" name="phoneNumber"></div>
 <div><label class="label">social networks</label><input value="{{user.socialNetworks}}" type="text" name="socialNetworks"></div>
 <div><label class="label">instrument</label>
+
 <select name="instrument">
   <option selected>{{user.instrument}}</option>
   {{#each instruments}}
@@ -21,6 +22,7 @@
   <option value="{{this.name}}">{{this.name}}</option>
   {{/each}}
 </select>
+
 </div>
 <div><label class="label">address</label><input value="{{user.address}}" type="text" name="address" required></div>
 <div><label class="label">login</label><input value="{{user.login}}" type="text" name="login" required></div>
